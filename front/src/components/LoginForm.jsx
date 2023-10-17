@@ -5,14 +5,18 @@ import FormLabel from '@mui/joy/FormLabel';
 
 export default function LoginForm() {
     return (
-        <FormControl>
-            <FormLabel>email</FormLabel>
-            <Input type="email" placeholder="Tapez votre email ici" variant="soft" />
+        <div className="flex flex-col gap-4">
+            <FormControl className="">
+                <FormLabel>email</FormLabel>
+                <Input type="email" placeholder="Tapez votre email ici" variant="soft" />
+            </FormControl>
 
-            <FormLabel>mot de passe</FormLabel>
-            <Input type="password" placeholder="Tapez votre mot de passe ici" variant="soft" />
+            <FormControl className="">
+                <FormLabel>mot de passe</FormLabel>
+                <Input type="password" placeholder="Tapez votre mot de passe ici" variant="soft" />
+            </FormControl>
 
             <Button>Se connecter</Button>
-        </FormControl>
+        </div>
     )
 }
