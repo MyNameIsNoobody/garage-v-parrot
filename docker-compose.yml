@@ -10,7 +10,6 @@ services:
     # stdin_open: true
     volumes:
        - ./front:/usr/src/app/react-docker
-       - /usr/src/app/react-docker/node_modules
   adminer:
     image: adminer
     restart: always

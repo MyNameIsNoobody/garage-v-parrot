@@ -4,6 +4,10 @@ WORKDIR /usr/src/app/react-docker
 
 COPY package*.json ./
 
+RUN npm ci
+
+COPY . .
+
 RUN npm install
 
 EXPOSE 3000
