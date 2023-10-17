@@ -1,19 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '@fontsource/inter';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 import Login from './pages/Login';
+import App from "./App";
+import ErrorPage from "./pages/ErrorPage";
 
 const myRouter = createBrowserRouter([
   {
     path: "/",
-    element: <h1>Hello world!</h1>,
+    element: <App />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/login",
