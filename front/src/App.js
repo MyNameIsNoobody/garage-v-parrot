@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import Typography from '@mui/joy/Typography';
+
 import './App.css';
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* bg-gray-200 max-w-max space-x-auto */}
+        <Nav />
       </header>
+
+      <section className="App-title">
+        <img></img>
+        <div>
+          <Typography level="h1">Garrage V. Parrot</Typography>
+          <p>À Toulouse depuis 2021</p>
+        </div>
+      </section>
+
+      <section className="App-services">
+
+      </section>
+
+      <section className="App-reviews">
+
+      </section>
     </div>
   );
 }
