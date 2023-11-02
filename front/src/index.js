@@ -8,15 +8,42 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Home from './pages/Home';
+import VehiclesSearch from './pages/VehiclesSearch';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import Login from './pages/Login';
-import App from "./App";
 import ErrorPage from "./pages/ErrorPage";
+import { CssVarsProvider } from '@mui/joy';
+import theme from './theme';
+import Layout from './components/layout/Layout';
+import VehicleAnnouncement from './pages/VehicleAnnouncement';
 
 const myRouter = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
+    children: [{
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/vehicles/search",
+        element: <VehiclesSearch />
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+      {
+        path: "/vehicles/:vehiclesId",
+        element: <VehicleAnnouncement />
+      },
+    ]
   },
   {
     path: "/login",
@@ -27,7 +54,9 @@ const myRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={myRouter} />
+    <CssVarsProvider theme={theme}>
+      <RouterProvider router={myRouter} />
+    </CssVarsProvider>
   </React.StrictMode>
 );
 
