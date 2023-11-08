@@ -6,13 +6,12 @@ import cars from '../images/cars.jpg';
 import garage from '../images/garage.gif';
 import ServiceCard from '../components/ServiceCard';
 import ReviewCard from '../components/ReviewCard';
-// import Ratings from '../components/Ratings';
 
 export default function HomeTab() {
     return (
         <>
-            <section className="App-title flex gap-x-10 h-96 mb-12">
-                <img className="w-full" src={garage} loading="lazy" alt="" />
+            <section className="flex gap-x-10 h-96 mb-12">
+                <img className="max-w-lg max-[800px]:collapse" src={garage} loading="lazy" alt="" />
                 <div className="flex flex-col justify-center items-center w-full">
                     <Typography level="h1">Garrage V. Parrot</Typography>
                     <p>À Toulouse depuis 2021</p>
@@ -25,7 +24,7 @@ export default function HomeTab() {
                     <Divider />
                 </Typography>
                 <Typography level="h2">Nos Services</Typography>
-                <div className="flex justify-between mt-4">
+                <div className="flex justify-between mt-4 flex-wrap">
                     <ServiceCard
                         src={repairs}
                         text="Réparations"
@@ -59,7 +58,7 @@ export default function HomeTab() {
                     <Divider />
                 </Typography>
                 <Typography level="h2">Témoignages</Typography>
-                <div className="flex justify-between mt-4">
+                <div className="flex flex-wrap justify-between mt-4">
                     <ReviewCard user="Michael Schumacher">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Cras tortor lacus, convallis in molestie eget, feugiat
@@ -78,7 +77,6 @@ export default function HomeTab() {
                         ut neque.
                     </ReviewCard>
                 </div>
-                {/* <Ratings /> */}
             </section>
         </>
     );

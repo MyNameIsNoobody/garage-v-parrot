@@ -16,7 +16,7 @@ export default function Contact() {
           <main className="flex justify-center">
               <Sheet
                   sx={{
-                    width: 1/2,
+                      width: 1 / 2,
                       mx: 6,
                       mb: 6,
                       py: 3,
@@ -51,7 +51,7 @@ export default function Contact() {
                       />
                   </FormControl>
 
-                  <div className="flex justify-between">
+                  <div className="flex justify-between flex-wrap">
                       <FormControl>
                           <FormLabel>Email</FormLabel>
                           <Input

@@ -2,7 +2,6 @@ import * as React from 'react';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
-import Ratings from './Ratings';
 
 export default function ReviewCard(props) {
   return (
@@ -11,6 +10,7 @@ export default function ReviewCard(props) {
               width: 320,
               maxWidth: "100%",
               boxShadow: "lg",
+              my: 2
           }}
       >
           <CardContent
@@ -33,7 +33,6 @@ export default function ReviewCard(props) {
                   {props.user}
               </Typography>
           </CardContent>
-          {/* <Ratings></Ratings> */}
       </Card>
   );
 }

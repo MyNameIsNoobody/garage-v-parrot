@@ -10,7 +10,7 @@ import Button from '@mui/joy/Button';
 
 export default function ServiceCard(props) {
   return (
-      <Card variant="outlined" sx={{ width: 320 }}>
+      <Card variant="outlined" sx={{ width: 320, my: 2 }}>
           <CardOverflow>
               <AspectRatio ratio="5/3">
                   <img src={props.src} loading="lazy" alt={props.alt} />
