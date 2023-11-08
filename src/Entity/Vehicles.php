@@ -5,8 +5,10 @@ namespace App\Entity;
 use App\Repository\VehiclesRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: VehiclesRepository::class)]
+#[ApiResource]
 class Vehicles
 {
     #[ORM\Id]
@@ -38,8 +40,8 @@ class Vehicles
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::SMALLINT, nullable: true)]
-    private ?string $doors = null;
+    #[ORM\Column(length: 50)]
+    private ?string $color = null;
 
     public function getId(): ?int
     {
@@ -142,14 +144,14 @@ class Vehicles
         return $this;
     }
 
-    public function getDoors(): ?int
+    public function getColor(): ?string
     {
-        return $this->doors;
+        return $this->color;
     }
 
-    public function setDoors(?int $doors): static
+    public function setColor(string $color): static
     {
-        $this->doors = $doors;
+        $this->color = $color;
 
         return $this;
     }
