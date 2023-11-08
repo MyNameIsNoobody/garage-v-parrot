@@ -4,8 +4,24 @@ import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
 import VehicleCard from '../components/VehicleCard';
 import PriceFilter from '../components/PriceFilter';
+import React, { useState, useEffect } from 'react';
 
 export default function VehiclesSearch() {
+    const [vehicles, setVehicles] = useState([]);
+
+  useEffect(() => {
+      fetch("https://localhost/api/vehicles")
+          .then((response) => {
+            return response.json()
+          })
+          .then((data) => {
+            setVehicles(data["hydra:member"]);
+          })
+          .catch((error) =>
+              console.error("Erreur lors de la requête : ", error)
+          );
+  }, []);
+
     return (
         <>
             <section className="flex justify-between my-12">
@@ -27,29 +43,18 @@ export default function VehiclesSearch() {
 
 
             <section className="flex flex-col my-12 ">
-                <Typography component="h1" level="h3">3 résultats trouvés</Typography>
-                <VehicleCard
-                    src="https://cloud.leparking.fr/2022/01/20/23/15/fiat-panda-active-eco-5-door-jaune_8104519786.jpg"
-                    price="2300 €"
-                    date="01/05/2023"
-                    to="/vehicles/1"
-                    >
-                    Fiat Panda
-                </VehicleCard>
-                <VehicleCard
-                    src="https://cdn-s-www.ledauphine.com/images/ACB7A383-1256-43F7-89BC-3796D9823B54/MF_contenu/citroen-c3-d-occasion-laquelle-choisir-1627978544.jpg"
-                    price="1800 €"
-                    date="02/02/2023"
-                    >
-                    Citroen C3
-                </VehicleCard>
-                <VehicleCard
-                    src="https://images.caradisiac.com/logos-ref/modele/modele--renault-twingo-2/S7-modele--renault-twingo-2.jpg"
-                    price="2250 €"
-                    date="05/11/2023"
-                    >
-                    Twingo 2
-                </VehicleCard>
+                <Typography component="h1" level="h3">{vehicles.length} résultats trouvés</Typography>
+                    {vehicles.map((vehicle) => (
+                        <VehicleCard
+                            src="https://cloud.leparking.fr/2022/01/20/23/15/fiat-panda-active-eco-5-door-jaune_8104519786.jpg"
+                            price={vehicle.price}
+                            date="01/05/2023"
+                            to={`/vehicles/${vehicle.id}`}
+                            key={vehicle.id}
+                        >
+                            {vehicle.name}
+                        </VehicleCard>
+                    ))}
             </section>
         </>
     );
