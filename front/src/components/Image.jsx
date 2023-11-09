@@ -7,8 +7,8 @@ export default function MediaRatio(props) {
     <Box sx={{ width: 1, my: 1}}>
       <AspectRatio objectFit="cover">
         <img
-          src="https://auto.cdn-rivamedia.com/photos/annoncecli/big/fiat-panda-145307201.jpg"
-          alt="A beautiful landscape."
+          src={props.src}
+          alt={props.alt}
         />
       </AspectRatio>
     </Box>

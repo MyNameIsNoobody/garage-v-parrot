@@ -3,14 +3,17 @@ import VehicleForm from '../components/VehicleForm';
 import Image from '../components/Image';
 import VehicleSpec from '../components/VehicleSpec';
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function VehicleAnnouncement() {
-    const [vehicles, setVehicles] = useState({});
+    let { vehiclesId } = useParams();
+    console.log(vehiclesId)
+    const [vehicle, setVehicle] = useState({});
 
   useEffect(() => {
-      fetch("https://localhost/api/vehicles/1")
+      fetch(`https://localhost/api/vehicles/${vehiclesId}`)
           .then((response) => response.json())
-          .then((data) => setVehicles(data))
+          .then((data) => setVehicle(data))
           .catch((error) =>
               console.error("Erreur lors de la requête : ", error)
           );
@@ -19,12 +22,12 @@ export default function VehicleAnnouncement() {
         <>
             <section className="flex h-fit my-12">
                 <div className="w-3/5 mx-4 h-96">
-                    <Image />
+                    <Image src={`https://localhost/upload/images/${vehicle.file_name}`} />
                     <Typography component="h1" level="h3">
-                        {vehicles.name}
+                        {vehicle.name}
                     </Typography>
                     <Typography component="p" level="title-md">
-                        {vehicles.price} €
+                        {vehicle.price} €
                     </Typography>
                 </div>
 
@@ -38,14 +41,14 @@ export default function VehicleAnnouncement() {
                     Caractéristiques
                 </Typography>
                 <div className="grid grid-cols-3 mt-4 gap-y-4">
-                    <VehicleSpec title="Marque">{vehicles.brand}</VehicleSpec>
-                    <VehicleSpec title="Modèle">{vehicles.model}</VehicleSpec>
+                    <VehicleSpec title="Marque">{vehicle.brand}</VehicleSpec>
+                    <VehicleSpec title="Modèle">{vehicle.model}</VehicleSpec>
                     <VehicleSpec title="Année de mise en circulation">
-                    {vehicles.released_year}
+                    {vehicle.released_year}
                     </VehicleSpec>
-                    <VehicleSpec title="Kilométrage">{vehicles.kilometers} Km</VehicleSpec>
-                    <VehicleSpec title="Couleur">{vehicles.color}</VehicleSpec>
-                    <VehicleSpec title="Boîte de vitesse">{vehicles.is_manual ? "Manuelle" : "Automatique"}</VehicleSpec>
+                    <VehicleSpec title="Kilométrage">{vehicle.kilometers} Km</VehicleSpec>
+                    <VehicleSpec title="Couleur">{vehicle.color}</VehicleSpec>
+                    <VehicleSpec title="Boîte de vitesse">{vehicle.is_manual ? "Manuelle" : "Automatique"}</VehicleSpec>
                 </div>
             </section>
 
@@ -54,7 +57,7 @@ export default function VehicleAnnouncement() {
                     Description
                 </Typography>
                 <Typography component="p" sx={{ my: 1 }}>
-                 {vehicles.description}
+                 {vehicle.description}
                 </Typography>
             </section>
         </>
