@@ -43,6 +43,9 @@ class Vehicles
     #[ORM\Column(length: 50)]
     private ?string $color = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $file_name = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -152,6 +155,18 @@ class Vehicles
     public function setColor(string $color): static
     {
         $this->color = $color;
+
+        return $this;
+    }
+
+    public function getFilename(): ?string
+    {
+        return $this->file_name;
+    }
+
+    public function setFilename(?string $file_name): static
+    {
+        $this->file_name = $file_name;
 
         return $this;
     }
