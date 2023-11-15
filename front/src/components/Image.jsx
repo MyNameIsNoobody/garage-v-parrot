@@ -2,7 +2,7 @@ import * as React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Box from '@mui/joy/Box';
 
-export default function MediaRatio(props) {
+export default function Image(props) {
   return (
     <Box sx={{ width: 1, my: 1}}>
       <AspectRatio objectFit="cover">

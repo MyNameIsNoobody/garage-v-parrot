@@ -26,7 +26,7 @@ export default function VehiclesSearch() {
         <>
             <section className="flex justify-between my-12">
                 <div className="w-2/3">
-                    <FormControl sx={{width: 2/3}}>
+                    <FormControl sx={{ width: 2 / 3 }}>
                         <FormLabel>Recherche</FormLabel>
                         <Input
                             name="search"
@@ -41,20 +41,23 @@ export default function VehiclesSearch() {
                 </div>
             </section>
 
-
-            <section className="flex flex-col my-12 ">
-                <Typography component="h1" level="h3">{vehicles.length} résultats trouvés</Typography>
+            <section className="my-12">
+                <Typography component="h1" level="h3">
+                    {vehicles.length} résultats trouvés
+                </Typography>
+                <div className="flex justify-evenly flex-wrap">
                     {vehicles.map((vehicle) => (
                         <VehicleCard
                             src={`https://localhost/upload/images/${vehicle.file_name}`}
-                            price={vehicle.price}
-                            date="01/05/2023"
+                            price={`${vehicle.price} €`}
+                            date={vehicle.released_date}
                             to={`/vehicles/${vehicle.id}`}
                             key={vehicle.id}
                         >
                             {vehicle.name}
                         </VehicleCard>
                     ))}
+                </div>
             </section>
         </>
     );
