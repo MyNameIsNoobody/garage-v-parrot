@@ -10,17 +10,16 @@ import Link from '@mui/joy/Link';
 export default function VehicleCard(props) {
   return (
       <Card
-          orientation="horizontal"
           variant="outlined"
           sx={{
-              width: 1 / 2,
-              my: 1,
+              width: 320,
+              my: 2,
               boxShadow: "sm",
               "&:hover": { boxShadow: "lg", borderColor: "neutral.outlinedHoverBorder" },
           }}
       >
           <CardOverflow>
-              <AspectRatio ratio="3/2" sx={{ width: 200}}>
+              <AspectRatio ratio="5/3">
                   <img src={props.src} loading="lazy" alt={props.alt} />
               </AspectRatio>
           </CardOverflow>

@@ -4,14 +4,14 @@ import Typography from '@mui/joy/Typography';
 
 export default function Footer() {
     return (
-        <footer className="flex justify-evenly bg-slate-800 pt-6 pb-12 gap-y-4 max-[800px]:flex-col">
+        <footer className="flex justify-evenly bg-slate-800 pt-6 pb-12 gap-y-4 max-[800px]:flex-col max-[800px]:items-center">
             <div>
                 <Typography textColor="white" component="h3" level="h3">
                     Garage V.Parrot
                 </Typography>
             </div>
 
-            <div className="flex flex-col w-96 text-white">
+            <div className="flex flex-col w-96 text-white max-[800px]:items-center">
                 <Typography component="h4" level="title-lg" textColor="white">
                     Horaires d'ouverture
                 </Typography>

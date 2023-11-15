@@ -10,12 +10,19 @@ export default function ReviewCard(props) {
               width: 320,
               maxWidth: "100%",
               boxShadow: "lg",
-              my: 2
+              my: 2,
           }}
       >
           <CardContent
               sx={{ alignItems: "center", textAlign: "center", pb: 2 }}
           >
+              <Typography
+                  level="h4"
+                  sx={{ maxWidth: "24ch", mb: 3 }}
+              >
+                  {props.title}
+              </Typography>
+
               <Typography
                   level="body-sm"
                   textAlign="left"
