@@ -46,6 +46,9 @@ class Vehicles
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $file_name = null;
 
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $released_date = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -167,6 +170,18 @@ class Vehicles
     public function setFilename(?string $file_name): static
     {
         $this->file_name = $file_name;
+
+        return $this;
+    }
+
+    public function getReleasedDate(): ?string
+    {
+        return $this->released_date;
+    }
+
+    public function setReleasedDate(?string $released_date): static
+    {
+        $this->released_date = $released_date;
 
         return $this;
     }
