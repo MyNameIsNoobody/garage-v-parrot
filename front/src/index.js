@@ -18,6 +18,8 @@ import { CssVarsProvider } from '@mui/joy';
 import theme from './theme';
 import Layout from './components/layout/Layout';
 import VehicleAnnouncement from './pages/VehicleAnnouncement';
+import Reviews from './pages/Reviews';
+// import DashboardLayout from './pages/dashboard/dashboard';
 
 const myRouter = createBrowserRouter([
   {
@@ -40,9 +42,17 @@ const myRouter = createBrowserRouter([
         element: <Contact />
       },
       {
+        path: "/reviews",
+        element: <Reviews />
+      },
+      {
         path: "/vehicles/:vehiclesId",
         element: <VehicleAnnouncement />
       },
+      // {
+      //   path: "/admin",
+      //   element: <DashboardLayout />
+      // },
     ]
   },
   {
