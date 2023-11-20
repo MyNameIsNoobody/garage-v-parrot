@@ -11,6 +11,8 @@ services:
     volumes:
        - ./front:/usr/src/app/react-docker
     command: sh -c "npm install && npm start"
+    environment:
+      - WATCHPACK_POLLING=true
   adminer:
     image: adminer
     restart: always
