@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Projet Garage V.Parrot
+Ce projet étudiant m'a fait découvrir différentes technologies telles que Docker, React ou encore Symfony. Elle a pour rôle pédagogique de démontrer les différentes compétences propres aux métiers du développement web, allant de la conception à la réalisation complète d'un site web.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prérequis
 
-## Available Scripts
+- Installer [Docker](https://docs.docker.com/get-docker/)
 
-In the project directory, you can run:
+## Démarrer le projet en local
 
-### `npm start`
+### Étape 1 :
+Lancer la commande
+```
+make all
+```
+Cette commande lancera les containers et initialisera la base de données.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Étape 2:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Le certificat SSL du back étant auto-signé, il faut accepter les risques en allant sur la page de l'API [https://localhost/api](https://localhost/api).
 
-### `npm test`
+### Étape 3:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Se rendre sur le localhost [http://localhost:3000](http://localhost:3000) dans votre navigateur pour accéder au site.
 
-### `npm run build`
+## État du projet :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+La construction du site étant toujours en cours, la partie authentification n'est pas encore gérée. Pour accéder au dashboard administrateur, il faut passer par l'url [https://localhost:3000/admin](http:s//localhost:3000/admin) pour y accéder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Quelques commandes utiles:
+```
+make up
+```
+Permet de démarrer les containers.
+```
+make down
+```
+Permet de stopper les containers.
+```
+make down -v
+```
+Permet aussi de supprimer les volumes.
+```
+make build
+```
+Permet de créer les images.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Auteur : [Sami Noirot](https://github.com/MyNameIsNoobody)
