@@ -19,7 +19,12 @@ import theme from './theme';
 import Layout from './components/layout/Layout';
 import VehicleAnnouncement from './pages/VehicleAnnouncement';
 import Reviews from './pages/Reviews';
-// import DashboardLayout from './pages/dashboard/dashboard';
+import Dashboard from './components/Dashboard';
+import ListVehicles from './pages/ListVehicles';
+import ListReviews from './pages/ListReviews';
+import ListUsers from './pages/ListUsers';
+import SetSchedule from './pages/SetSchedule';
+import SetServices from './pages/SetServices';
 
 const myRouter = createBrowserRouter([
   {
@@ -49,15 +54,37 @@ const myRouter = createBrowserRouter([
         path: "/vehicles/:vehiclesId",
         element: <VehicleAnnouncement />
       },
-      // {
-      //   path: "/admin",
-      //   element: <DashboardLayout />
-      // },
     ]
   },
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/admin",
+    element: <Dashboard />,
+    children: [
+    {
+      path: "vehicles",
+      element: <ListVehicles />,
+    },
+    {
+      path: "reviews",
+      element: <ListReviews />,
+    },
+    {
+      path: "users",
+      element: <ListUsers />,
+    },
+    {
+      path: "schedules",
+      element: <SetSchedule />,
+    },
+    {
+      path: "services",
+      element: <SetServices />,
+    },
+  ]
   },
 ]);
 
