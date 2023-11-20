@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 
 export default function VehicleAnnouncement() {
     let { vehiclesId } = useParams();
-    console.log(vehiclesId)
     const [vehicle, setVehicle] = useState({});
 
   useEffect(() => {

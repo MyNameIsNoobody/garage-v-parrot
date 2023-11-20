@@ -66,7 +66,7 @@ export default function VehicleForm() {
                 placeholder="Je suis intéressé par votre annonce !" />
           </FormControl>
 
-          <Button sx={{ mt: 1 /* margin top */ }}>Envoyer</Button>
+          <Button sx={{ mt: 1 }}>Envoyer</Button>
         </Sheet>
       </main>
     </CssVarsProvider>

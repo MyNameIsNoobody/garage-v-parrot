@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Typography from '@mui/joy/Typography';
 import ReviewCard from '../components/ReviewCard';
-import ModalForm from '../components/ModalForm';
+import ReviewForm from '../components/ReviewForm';
 
 export default function Contact() {
   return (
@@ -39,7 +39,7 @@ export default function Contact() {
               </ReviewCard>
           </div>
 
-          <ModalForm />
+          <ReviewForm />
       </>
   );
 }
