@@ -1,46 +1,47 @@
-# Symfony Docker
+# Projet Garage V.Parrot
+Ce projet étudiant m'a fait découvrir différentes technologies telles que Docker, React ou encore Symfony. Elle a pour rôle pédagogique de démontrer les différentes compétences propres aux métiers du développement web, allant de la conception à la réalisation complète d'un site web.
 
-A [Docker](https://www.docker.com/)-based installer and runtime for the [Symfony](https://symfony.com) web framework, with full [HTTP/2](https://symfony.com/doc/current/weblink.html), HTTP/3 and HTTPS support.
+## Prérequis
 
-![CI](https://github.com/dunglas/symfony-docker/workflows/CI/badge.svg)
+- Installer [Docker](https://docs.docker.com/get-docker/)
 
-## Getting Started
+## Démarrer le projet en local
 
-1. If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
-2. Run `docker compose build --no-cache` to build fresh images
-3. Run `docker compose up --pull --wait` to start the project
-4. Open `https://localhost` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
-5. Run `docker compose down --remove-orphans` to stop the Docker containers.
+### Étape 1 :
+Lancer la commande
+```
+make all
+```
+Cette commande lancera les containers et initialisera la base de données.
 
-## Features
+### Étape 2:
 
-* Production, development and CI ready
-* [Installation of extra Docker Compose services](docs/extra-services.md) with Symfony Flex
-* Automatic HTTPS (in dev and in prod!)
-* HTTP/2, HTTP/3 and [Preload](https://symfony.com/doc/current/web_link.html) support
-* Built-in [Mercure](https://symfony.com/doc/current/mercure.html) hub
-* [Vulcain](https://vulcain.rocks) support
-* Native [XDebug](docs/xdebug.md) integration
-* Just 2 services (PHP FPM and Caddy server)
-* Super-readable configuration
+Le certificat SSL du back étant auto-signé, il faut accepter les risques en allant sur la page de l'API [https://localhost/api](https://localhost/api).
 
-**Enjoy!**
+### Étape 3:
 
-## Docs
+Se rendre sur le localhost [http://localhost:3000](http://localhost:3000) dans votre navigateur pour accéder au site.
 
-1. [Build options](docs/build.md)
-2. [Using Symfony Docker with an existing project](docs/existing-project.md)
-3. [Support for extra services](docs/extra-services.md)
-4. [Deploying in production](docs/production.md)
-5. [Debugging with Xdebug](docs/xdebug.md)
-6. [TLS Certificates](docs/tls.md)
-7. [Using a Makefile](docs/makefile.md)
-8. [Troubleshooting](docs/troubleshooting.md)
+## État du projet :
 
-## License
+La construction du site étant toujours en cours, la partie authentification n'est pas encore gérée. Pour accéder au dashboard administrateur, il faut passer par l'url [https://localhost:3000/admin](http:s//localhost:3000/admin) pour y accéder.
 
-Symfony Docker is available under the MIT License.
+## Quelques commandes utiles:
+```
+make up
+```
+Permet de démarrer les containers.
+```
+make down
+```
+Permet de stopper les containers.
+```
+make down -v
+```
+Permet aussi de supprimer les volumes.
+```
+make build
+```
+Permet de créer les images.
 
-## Credits
-
-Created by [Kévin Dunglas](https://dunglas.fr), co-maintained by [Maxime Helias](https://twitter.com/maxhelias) and sponsored by [Les-Tilleuls.coop](https://les-tilleuls.coop).
+Auteur : [Sami Noirot](https://github.com/MyNameIsNoobody)
